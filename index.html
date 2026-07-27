@@ -256,11 +256,21 @@ const SALES = [
     brand: "나이키",
     title: "나이키 썸머세일",
     category: "스포츠",
-    start: "2026-07-27", end: null, confirmed: true,
+    start: "2026-07-27", end: "2026-08-02", confirmed: true,
     place: "온라인 (nike.com)", region: "온라인",
     discount: "최대 40%",
-    note: "종료일 미확인 — 조기 품절 주의",
-    source: { label: "어미새 패밀리세일 게시판", url: "https://eomisae.co.kr/fs" }
+    note: "러닝화·운동화·의류·액세서리 — 조기 품절 주의",
+    source: { label: "Facebook @Familysale", url: "https://www.facebook.com/permalink.php?story_fbid=pfbid02s8yrSfhBKx17jiSbH1T9Lo8t85TcagvS6Ak9Gd8XZpghAY5MjkDnBCaP7pEZ42E3l&id=100067930461219" }
+  },
+  {
+    brand: "스미스코리아",
+    title: "2026 스미스·고어웨어 패밀리세일",
+    category: "스포츠",
+    start: null, end: null, confirmed: true, ended: true,
+    place: "스미스x고어웨어 신사점 (강남구 압구정로2길 30)", region: "서울",
+    discount: "오프라인 특가",
+    note: "2026년 7월 말 종료됨 (고글·선글라스·고어웨어). 다음 행사 공지 시 업데이트 예정",
+    source: { label: "Facebook 스미스코리아", url: "https://www.facebook.com/smithkorea1" }
   },
   {
     brand: "릴리바이레드",
@@ -301,6 +311,7 @@ const parse = s => { const [y, m, d] = s.split("-").map(Number); return new Date
 const fmt = s => { const [y, m, d] = s.split("-").map(Number); return `${y}.${String(m).padStart(2,"0")}.${String(d).padStart(2,"0")}`; };
 
 function statusOf(s) {
+  if (s.ended) return { key: "done", cls: "done", label: "종료", order: 3, sub: 9e9 };
   if (!s.confirmed || !s.start) return { key: "plan", cls: "tbd", label: "일정 미확정", order: 2, sub: 9e9 };
   const st = parse(s.start), en = s.end ? parse(s.end) : null;
   if (st > today) return { key: "plan", cls: "plan", label: `D-${Math.round((st - today) / D)} 예정`, order: 1, sub: st - today };
@@ -359,7 +370,7 @@ function render() {
   for (const { s, st } of items) {
     const period = s.start
       ? `${fmt(s.start)} ~ ${s.end ? fmt(s.end) : "미정"}`
-      : "일정 공지 전";
+      : (s.ended ? "종료된 행사" : "일정 공지 전");
     const card = document.createElement("article");
     card.className = "card" + (st.key === "done" ? " ended" : "");
     card.innerHTML = `
