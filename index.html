@@ -1,0 +1,344 @@
+<title>패밀리세일 모아보기</title>
+<style>
+  :root {
+    --bg: #FAF9F7;
+    --surface: #FFFFFF;
+    --ink: #1F1B18;
+    --ink-soft: #6B635C;
+    --line: #E8E3DD;
+    --accent: #C8402E;
+    --accent-soft: #FBEDEA;
+    --ok: #2E7D4F;
+    --ok-soft: #E8F3EC;
+    --plan: #3A6EA5;
+    --plan-soft: #EAF1F8;
+    --done: #9A938C;
+    --done-soft: #F0EEEB;
+    --shadow: 0 1px 3px rgba(31, 27, 24, .06), 0 4px 14px rgba(31, 27, 24, .05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #171513;
+      --surface: #211E1B;
+      --ink: #EDE9E4;
+      --ink-soft: #A39B93;
+      --line: #35302B;
+      --accent: #E85B47;
+      --accent-soft: #3A241F;
+      --ok: #5BB884;
+      --ok-soft: #1F3328;
+      --plan: #7AA8D8;
+      --plan-soft: #1F2C3A;
+      --done: #7A736C;
+      --done-soft: #2A2724;
+      --shadow: 0 1px 3px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #FAF9F7; --surface: #FFFFFF; --ink: #1F1B18; --ink-soft: #6B635C;
+    --line: #E8E3DD; --accent: #C8402E; --accent-soft: #FBEDEA;
+    --ok: #2E7D4F; --ok-soft: #E8F3EC; --plan: #3A6EA5; --plan-soft: #EAF1F8;
+    --done: #9A938C; --done-soft: #F0EEEB;
+    --shadow: 0 1px 3px rgba(31,27,24,.06), 0 4px 14px rgba(31,27,24,.05);
+  }
+  :root[data-theme="dark"] {
+    --bg: #171513; --surface: #211E1B; --ink: #EDE9E4; --ink-soft: #A39B93;
+    --line: #35302B; --accent: #E85B47; --accent-soft: #3A241F;
+    --ok: #5BB884; --ok-soft: #1F3328; --plan: #7AA8D8; --plan-soft: #1F2C3A;
+    --done: #7A736C; --done-soft: #2A2724;
+    --shadow: 0 1px 3px rgba(0,0,0,.4);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 80px; }
+
+  header { padding: 40px 0 20px; }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .12em; color: var(--accent);
+    font-weight: 700; text-transform: uppercase;
+  }
+  h1 { font-size: 28px; margin: 6px 0 4px; letter-spacing: -.02em; text-wrap: balance; }
+  .updated { font-size: 13px; color: var(--ink-soft); }
+
+  /* 필터바 */
+  .filters {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    padding: 14px 0 12px;
+    border-bottom: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .chip {
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    border-radius: 999px; padding: 5px 14px; font-size: 13.5px; cursor: pointer;
+    font-family: inherit; transition: border-color .12s, background .12s;
+  }
+  .chip:hover { border-color: var(--accent); }
+  .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .chip.on { background: var(--ink); border-color: var(--ink); color: var(--bg); font-weight: 600; }
+  .row-label { font-size: 12px; color: var(--ink-soft); min-width: 52px; font-weight: 600; }
+  #search {
+    flex: 1; min-width: 180px; max-width: 320px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    border-radius: 999px; padding: 6px 16px; font-size: 13.5px; font-family: inherit;
+  }
+  #search:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .count { font-size: 13px; color: var(--ink-soft); margin: 16px 2px 12px; }
+
+  /* 카드 */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 18px 16px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .card.ended { opacity: .55; }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge {
+    font-size: 11.5px; font-weight: 700; border-radius: 6px; padding: 2px 8px;
+    letter-spacing: .02em; white-space: nowrap;
+  }
+  .badge.live { background: var(--ok-soft); color: var(--ok); }
+  .badge.soon { background: var(--accent-soft); color: var(--accent); }
+  .badge.plan { background: var(--plan-soft); color: var(--plan); }
+  .badge.done { background: var(--done-soft); color: var(--done); }
+  .badge.tbd  { background: var(--done-soft); color: var(--ink-soft); }
+  .discount { font-size: 15px; font-weight: 800; color: var(--accent); white-space: nowrap; }
+  .brand { font-size: 12.5px; color: var(--ink-soft); font-weight: 600; }
+  .title { font-size: 16.5px; font-weight: 700; letter-spacing: -.01em; margin: -2px 0 0; }
+  .meta { font-size: 13.5px; color: var(--ink-soft); display: flex; flex-direction: column; gap: 3px; }
+  .meta b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .note { font-size: 12.5px; color: var(--ink-soft); border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 2px; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+  .tag { font-size: 11.5px; color: var(--ink-soft); background: var(--bg); border: 1px solid var(--line); border-radius: 5px; padding: 1px 7px; }
+  .src { font-size: 12.5px; }
+  .src a { color: var(--plan); text-decoration: none; }
+  .src a:hover { text-decoration: underline; }
+  .empty { text-align: center; color: var(--ink-soft); padding: 60px 0; font-size: 14.5px; }
+
+  footer { margin-top: 48px; font-size: 12.5px; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 16px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Family Sale Board</div>
+    <h1>패밀리세일 모아보기</h1>
+    <div class="updated">마지막 업데이트: <b>2026년 7월 27일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
+  </header>
+
+  <div class="filters">
+    <div class="row" id="statusRow">
+      <span class="row-label">상태</span>
+      <button class="chip on" data-status="all">전체</button>
+      <button class="chip" data-status="live">진행 중</button>
+      <button class="chip" data-status="plan">예정</button>
+      <button class="chip" data-status="done">종료</button>
+    </div>
+    <div class="row" id="catRow">
+      <span class="row-label">카테고리</span>
+      <button class="chip on" data-cat="all">전체</button>
+    </div>
+    <div class="row" id="regionRow">
+      <span class="row-label">장소</span>
+      <button class="chip on" data-region="all">전체</button>
+      <input id="search" type="search" placeholder="브랜드·행사명 검색" aria-label="검색">
+    </div>
+  </div>
+
+  <div class="count" id="count"></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" hidden>조건에 맞는 세일이 없어요. 필터를 조정해 보세요.</div>
+
+  <footer>
+    출처는 각 카드의 링크를 참고하세요. 행사 일정과 할인율은 주최 측 사정에 따라 변경될 수 있으니, 방문·구매 전 공식 채널에서 꼭 재확인하세요.
+  </footer>
+</div>
+
+<script>
+/* ================= DATA — 여기만 수정하면 됩니다 =================
+   start/end: YYYY-MM-DD (미정이면 null)
+   confirmed: false 면 "일정 미확정(예상)" 으로 표시                    */
+const SALES = [
+  {
+    brand: "웰터 익스페리먼트",
+    title: "WELTER EXPERIMENT DAY",
+    category: "패션",
+    start: "2026-07-24", end: "2026-08-06", confirmed: true,
+    place: "온라인 (welter-experiment.com)", region: "온라인",
+    discount: "최대 70%",
+    note: "8/6(목) 오전 11시 종료",
+    source: { label: "Threads @familysale", url: "https://www.threads.com/@familysale" }
+  },
+  {
+    brand: "아이그너",
+    title: "AIGNER 시즌오프 세일",
+    category: "패션잡화",
+    start: "2026-07-23", end: "2026-08-02", confirmed: true,
+    place: "온라인 (아이그너 자사몰)", region: "온라인",
+    discount: "최대 70%",
+    note: null,
+    source: { label: "Threads @familysale", url: "https://www.threads.com/@familysale" }
+  },
+  {
+    brand: "플리츠마마",
+    title: "썸머 클리어런스 세일",
+    category: "패션잡화",
+    start: "2026-07-22", end: "2026-07-31", confirmed: true,
+    place: "온라인 (pleatsmama.com)", region: "온라인",
+    discount: "최대 50%",
+    note: "타임특가는 최대 60%",
+    source: { label: "Threads @familysale", url: "https://www.threads.com/@familysale" }
+  },
+  {
+    brand: "티르리르",
+    title: "티르리르 패밀리세일",
+    category: "유아동",
+    start: "2026-07-23", end: "2026-08-02", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "최대 90%",
+    note: null,
+    source: { label: "Threads @familysale", url: "https://www.threads.com/@familysale" }
+  },
+  {
+    brand: "나이키",
+    title: "나이키 썸머세일",
+    category: "스포츠",
+    start: "2026-07-27", end: null, confirmed: true,
+    place: "온라인 (nike.com)", region: "온라인",
+    discount: "최대 40%",
+    note: "종료일 미확인 — 조기 품절 주의",
+    source: { label: "어미새 패밀리세일 게시판", url: "https://eomisae.co.kr/fs" }
+  },
+  {
+    brand: "릴리바이레드",
+    title: "2026 하반기 패밀리세일",
+    category: "뷰티",
+    start: "2026-07-20", end: "2026-07-27", confirmed: true,
+    place: "온라인 (자사몰)", region: "온라인",
+    discount: "품절 재고 초특가",
+    note: "7/27(월) 오전 10시 종료됨",
+    source: { label: "lilybyred.co.kr", url: "https://lilybyred.co.kr" }
+  },
+  {
+    brand: "한섬 (더한섬)",
+    title: "더한섬 오프라인 패밀리세일 (일정 미확정)",
+    category: "패션",
+    start: null, end: null, confirmed: false,
+    place: "세텍 SETEC (학여울역 1번 출구)", region: "서울",
+    discount: "최대 90%",
+    note: "작년엔 8월 중순 4일간 개최 (마인·타임·시스템·타미힐피거 등). 올해 일정 공지 대기 중",
+    source: { label: "SETEC 전시일정", url: "https://www.setec.or.kr/front/schedule/list.do" }
+  },
+  {
+    brand: "엘카코리아 (에스티로더 그룹)",
+    title: "ELC 패밀리세일 (일정 미확정)",
+    category: "뷰티",
+    start: null, end: null, confirmed: false,
+    place: "온라인 (초대 코드 필요)", region: "온라인",
+    discount: "최대 90%",
+    note: "하반기 행사는 보통 9~11월. 에스티로더·조말론·맥·바비브라운 등. 폐쇄형이라 입장 코드 필요",
+    source: { label: "ELC 세일 정리 글", url: "https://hub.greatsisyphus.com/elca-korea-sale-2026/" }
+  }
+];
+/* ================================================================ */
+
+const today = new Date(); today.setHours(0, 0, 0, 0);
+const D = 86400000;
+const parse = s => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
+const fmt = s => { const [y, m, d] = s.split("-").map(Number); return `${y}.${String(m).padStart(2,"0")}.${String(d).padStart(2,"0")}`; };
+
+function statusOf(s) {
+  if (!s.confirmed || !s.start) return { key: "plan", cls: "tbd", label: "일정 미확정", order: 2, sub: 9e9 };
+  const st = parse(s.start), en = s.end ? parse(s.end) : null;
+  if (st > today) return { key: "plan", cls: "plan", label: `D-${Math.round((st - today) / D)} 예정`, order: 1, sub: st - today };
+  if (en && en < today) return { key: "done", cls: "done", label: "종료", order: 3, sub: today - en };
+  const left = en ? Math.round((en - today) / D) : null;
+  if (left !== null && left <= 2) return { key: "live", cls: "soon", label: left === 0 ? "오늘 종료" : `종료 D-${left}`, order: 0, sub: left };
+  return { key: "live", cls: "live", label: "진행 중", order: 0, sub: left ?? 999 };
+}
+
+const state = { status: "all", cat: "all", region: "all", q: "" };
+
+function buildChips(rowId, key, values) {
+  const row = document.getElementById(rowId);
+  values.forEach(v => {
+    const b = document.createElement("button");
+    b.className = "chip"; b.textContent = v; b.dataset[key] = v;
+    row.insertBefore(b, key === "region" ? document.getElementById("search") : null);
+  });
+  row.addEventListener("click", e => {
+    const v = e.target.dataset?.[key];
+    if (!v) return;
+    state[key === "cat" ? "cat" : key] = v;
+    row.querySelectorAll(".chip").forEach(c => c.classList.toggle("on", c.dataset[key] === v));
+    render();
+  });
+}
+buildChips("catRow", "cat", [...new Set(SALES.map(s => s.category))]);
+buildChips("regionRow", "region", [...new Set(SALES.map(s => s.region))]);
+
+document.getElementById("statusRow").addEventListener("click", e => {
+  const v = e.target.dataset?.status;
+  if (!v) return;
+  state.status = v;
+  document.querySelectorAll("#statusRow .chip").forEach(c => c.classList.toggle("on", c.dataset.status === v));
+  render();
+});
+document.getElementById("search").addEventListener("input", e => { state.q = e.target.value.trim(); render(); });
+
+function render() {
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+  const q = state.q.toLowerCase();
+  const items = SALES
+    .map(s => ({ s, st: statusOf(s) }))
+    .filter(({ s, st }) =>
+      (state.status === "all" || st.key === state.status) &&
+      (state.cat === "all" || s.category === state.cat) &&
+      (state.region === "all" || s.region === state.region) &&
+      (!q || (s.brand + s.title + s.place).toLowerCase().includes(q)))
+    .sort((a, b) => a.st.order - b.st.order || a.st.sub - b.st.sub);
+
+  document.getElementById("count").textContent =
+    `${items.length}건 표시 중 · 진행 중 ${items.filter(i => i.st.key === "live").length}건`;
+  document.getElementById("empty").hidden = items.length > 0;
+
+  for (const { s, st } of items) {
+    const period = s.start
+      ? `${fmt(s.start)} ~ ${s.end ? fmt(s.end) : "미정"}`
+      : "일정 공지 전";
+    const card = document.createElement("article");
+    card.className = "card" + (st.key === "done" ? " ended" : "");
+    card.innerHTML = `
+      <div class="card-top">
+        <div class="badges"><span class="badge ${st.cls}">${st.label}</span></div>
+        <span class="discount">${s.discount}</span>
+      </div>
+      <div>
+        <div class="brand">${s.brand}</div>
+        <div class="title">${s.title}</div>
+      </div>
+      <div class="meta">
+        <span>🗓 <b>${period}</b></span>
+        <span>📍 ${s.place}</span>
+      </div>
+      ${s.note ? `<div class="note">${s.note}</div>` : ""}
+      <div class="tags">
+        <span class="tag">${s.category}</span><span class="tag">${s.region}</span>
+        <span class="src"><a href="${s.source.url}" target="_blank" rel="noopener">출처: ${s.source.label}</a></span>
+      </div>`;
+    grid.appendChild(card);
+  }
+}
+render();
+</script>
