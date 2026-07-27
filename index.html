@@ -103,6 +103,11 @@
     display: flex; flex-direction: column; gap: 8px;
   }
   .card.ended { opacity: .55; }
+  .card.clickable { cursor: pointer; transition: border-color .12s, transform .12s; }
+  .card.clickable:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .card.clickable:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .buy { color: var(--accent); font-weight: 700; text-decoration: none; }
+  .buy:hover { text-decoration: underline; }
   .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
   .badges { display: flex; gap: 6px; flex-wrap: wrap; }
   .badge {
@@ -210,7 +215,8 @@
 <script>
 /* ================= DATA — 여기만 수정하면 됩니다 =================
    start/end: YYYY-MM-DD (미정이면 null)
-   confirmed: false 면 "일정 미확정(예상)" 으로 표시                    */
+   confirmed: false 면 "일정 미확정(예상)" 으로 표시
+   link: 실제 판매 페이지 URL (있으면 카드 전체가 클릭됨)              */
 const SALES = [
   {
     brand: "웰터 익스페리먼트",
@@ -220,6 +226,7 @@ const SALES = [
     place: "온라인 (welter-experiment.com)", region: "온라인",
     discount: "최대 70%",
     note: "8/6(목) 오전 11시 종료",
+    link: "https://welter-experiment.com",
     source: { label: "Threads @familysale", url: "https://www.threads.com/@familysale" }
   },
   {
@@ -230,6 +237,7 @@ const SALES = [
     place: "온라인 (아이그너 자사몰)", region: "온라인",
     discount: "최대 70%",
     note: null,
+    link: "https://aignermunich.kr/seasonoff/off_list_p.html",
     source: { label: "Threads @familysale", url: "https://www.threads.com/@familysale" }
   },
   {
@@ -240,16 +248,18 @@ const SALES = [
     place: "온라인 (pleatsmama.com)", region: "온라인",
     discount: "최대 50%",
     note: "타임특가는 최대 60%",
+    link: "https://pleatsmama.com",
     source: { label: "Threads @familysale", url: "https://www.threads.com/@familysale" }
   },
   {
-    brand: "티르리르",
+    brand: "티르리르 (TirrLirr)",
     title: "티르리르 패밀리세일",
-    category: "유아동",
+    category: "패션잡화",
     start: "2026-07-23", end: "2026-08-02", confirmed: true,
     place: "온라인 (네이버 브랜드스토어)", region: "온라인",
     discount: "최대 90%",
-    note: null,
+    note: "주얼리 브랜드 — 세일은 네이버 브랜드스토어에서 진행",
+    link: "http://www.tirrlirr.co.kr/",
     source: { label: "Threads @familysale", url: "https://www.threads.com/@familysale" }
   },
   {
@@ -260,6 +270,7 @@ const SALES = [
     place: "온라인 (nike.com)", region: "온라인",
     discount: "최대 40%",
     note: "러닝화·운동화·의류·액세서리 — 조기 품절 주의",
+    link: "https://www.nike.com/kr/w/sale-3yaep",
     source: { label: "Facebook @Familysale", url: "https://www.facebook.com/permalink.php?story_fbid=pfbid02s8yrSfhBKx17jiSbH1T9Lo8t85TcagvS6Ak9Gd8XZpghAY5MjkDnBCaP7pEZ42E3l&id=100067930461219" }
   },
   {
@@ -270,6 +281,7 @@ const SALES = [
     place: "스미스x고어웨어 신사점 (강남구 압구정로2길 30)", region: "서울",
     discount: "오프라인 특가",
     note: "2026년 7월 말 종료됨 (고글·선글라스·고어웨어). 다음 행사 공지 시 업데이트 예정",
+    link: "https://smartstore.naver.com/smithkorea",
     source: { label: "Facebook 스미스코리아", url: "https://www.facebook.com/smithkorea1" }
   },
   {
@@ -280,6 +292,7 @@ const SALES = [
     place: "온라인 (자사몰)", region: "온라인",
     discount: "품절 재고 초특가",
     note: "7/27(월) 오전 10시 종료됨",
+    link: "https://lilybyred.co.kr",
     source: { label: "lilybyred.co.kr", url: "https://lilybyred.co.kr" }
   },
   {
@@ -372,7 +385,10 @@ function render() {
       ? `${fmt(s.start)} ~ ${s.end ? fmt(s.end) : "미정"}`
       : (s.ended ? "종료된 행사" : "일정 공지 전");
     const card = document.createElement("article");
-    card.className = "card" + (st.key === "done" ? " ended" : "");
+    card.className = "card" + (st.key === "done" ? " ended" : "") + (s.link ? " clickable" : "");
+    const linkRow = s.link
+      ? `<span>🛒 <a class="buy" href="${s.link}" target="_blank" rel="noopener">판매 페이지 바로가기 (${new URL(s.link).hostname.replace("www.", "")})</a></span>`
+      : "";
     card.innerHTML = `
       <div class="card-top">
         <div class="badges"><span class="badge ${st.cls}">${st.label}</span></div>
@@ -385,12 +401,21 @@ function render() {
       <div class="meta">
         <span>🗓 <b>${period}</b></span>
         <span>📍 ${s.place}</span>
+        ${linkRow}
       </div>
       ${s.note ? `<div class="note">${s.note}</div>` : ""}
       <div class="tags">
         <span class="tag">${s.category}</span><span class="tag">${s.region}</span>
         <span class="src"><a href="${s.source.url}" target="_blank" rel="noopener">출처: ${s.source.label}</a></span>
       </div>`;
+    if (s.link) {
+      card.tabIndex = 0;
+      card.setAttribute("role", "link");
+      card.setAttribute("aria-label", `${s.brand} ${s.title} 판매 페이지 열기`);
+      const open = () => window.open(s.link, "_blank", "noopener");
+      card.addEventListener("click", e => { if (!e.target.closest("a")) open(); });
+      card.addEventListener("keydown", e => { if (e.key === "Enter" && e.target === card) open(); });
+    }
     grid.appendChild(card);
   }
 }
