@@ -139,24 +139,14 @@
   }
   .report h2 { font-size: 17px; margin: 0 0 4px; letter-spacing: -.01em; }
   .report p { font-size: 13.5px; color: var(--ink-soft); margin: 0 0 14px; }
-  .report-form { display: flex; flex-wrap: wrap; gap: 8px; }
-  .report-form input {
-    border: 1px solid var(--line); background: var(--bg); color: var(--ink);
-    border-radius: 8px; padding: 9px 14px; font-size: 13.5px; font-family: inherit;
-  }
-  .report-form input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-  #reportLink { flex: 2 1 260px; }
-  #reportMemo { flex: 3 1 300px; }
   .btn-report {
-    border: none; background: var(--accent); color: #fff; font-weight: 700;
+    display: inline-block; border: none; background: var(--accent); color: #fff; font-weight: 700;
     border-radius: 8px; padding: 9px 18px; font-size: 13.5px; cursor: pointer; font-family: inherit;
+    text-decoration: none;
   }
   .btn-report:hover { filter: brightness(1.08); }
   .btn-report:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   .report-hint { font-size: 12px; color: var(--ink-soft); margin-top: 10px; }
-  .report-hint a { color: var(--plan); text-decoration: none; }
-  .report-hint a:hover { text-decoration: underline; }
-  .report-error { font-size: 12.5px; color: var(--accent); margin-top: 8px; }
 
   footer { margin-top: 48px; font-size: 12.5px; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 16px; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -195,15 +185,9 @@
   <section class="report" aria-labelledby="reportTitle">
     <h2 id="reportTitle">📮 세일 제보하기</h2>
     <p>인스타그램·페이스북 등에서 발견한 패밀리세일 게시물 링크나 계정을 알려주세요. 확인 후 페이지에 반영됩니다.</p>
-    <form class="report-form" id="reportForm">
-      <input id="reportLink" type="text" placeholder="게시물 링크 또는 계정명 (예: @familysale)" aria-label="게시물 링크 또는 계정명" required>
-      <input id="reportMemo" type="text" placeholder="메모 (선택 — 브랜드, 기간, 장소 등)" aria-label="메모">
-      <button type="submit" class="btn-report">GitHub로 제보하기</button>
-    </form>
-    <div class="report-error" id="reportError" hidden>링크 또는 계정명을 입력해 주세요.</div>
+    <a class="btn-report" id="reportBtn" href="#" target="_blank" rel="noopener">구글폼으로 제보하기</a>
     <div class="report-hint">
-      제출 버튼을 누르면 GitHub 이슈 작성 화면이 열립니다 (GitHub 로그인 필요). 내용 확인 후 <b>Create</b>만 누르면 접수 완료!
-      · <a href="https://github.com/stepersjmj-hash/sales/issues?q=is%3Aissue+%5B%EC%A0%9C%EB%B3%B4%5D" target="_blank" rel="noopener">제보 목록 보기</a>
+      버튼을 누르면 구글폼이 새 탭으로 열립니다. 로그인 없이 누구나 제보할 수 있어요.
     </div>
   </section>
 
@@ -443,22 +427,15 @@ function render() {
 }
 render();
 
-/* 제보하기 — 입력값을 담아 GitHub 이슈 작성 화면을 새 탭으로 엽니다 */
-const REPO = "stepersjmj-hash/sales";
-document.getElementById("reportForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const link = document.getElementById("reportLink").value.trim();
-  const memo = document.getElementById("reportMemo").value.trim();
-  const err = document.getElementById("reportError");
-  if (!link) { err.hidden = false; return; }
-  err.hidden = true;
-  const title = `[제보] ${link.length > 60 ? link.slice(0, 60) + "…" : link}`;
-  const body = [
-    "### 링크 / 계정", link, "",
-    "### 메모", memo || "(없음)", "",
-    "---", "_패밀리세일 모아보기 페이지에서 제보됨_"
-  ].join("\n");
-  const url = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-  window.open(url, "_blank", "noopener");
-});
+/* 제보하기 — 구글폼 주소를 아래에 넣으면 버튼이 활성화됩니다 */
+const GOOGLE_FORM_URL = "https://forms.gle/mnzZxKFG71woqF2T6";
+const reportBtn = document.getElementById("reportBtn");
+if (GOOGLE_FORM_URL) {
+  reportBtn.href = GOOGLE_FORM_URL;
+} else {
+  reportBtn.addEventListener("click", e => {
+    e.preventDefault();
+    alert("구글폼 준비 중입니다. 잠시 후 다시 시도해 주세요.");
+  });
+}
 </script>
