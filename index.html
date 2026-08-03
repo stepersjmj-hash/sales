@@ -280,6 +280,87 @@ const SALES = [
     source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1062" }
   },
   {
+    brand: "피카부",
+    title: "피카부 첫 패밀리세일",
+    category: "육아",
+    start: "2026-07-28", end: "2026-08-11", confirmed: true,
+    place: "남대문 웅이아동복 2층", region: "서울",
+    discount: "5천원 균일가부터",
+    note: "신생아·키즈·주니어·엄마 옷까지. 예약 후 방문 시 미니가방·양말 증정",
+    source: { label: "Instagram 제보", url: "https://www.instagram.com/p/DbYNCZOipZV" }
+  },
+  {
+    brand: "엑스라이더",
+    title: "엑스라이더 패밀리세일",
+    category: "육아",
+    start: "2026-08-08", end: "2026-08-09", confirmed: true,
+    place: "엑스라이더 청담본점 (강남구 도산대로55길 18, 1층)", region: "서울",
+    discount: "특별가",
+    note: "이틀간 11:00~17:00. 시승 기체·청담 매장 보유 상품 한정, 주차 불가(대중교통 권장)",
+    source: { label: "Instagram 제보", url: "https://www.instagram.com/p/DbZp8qDE-th" }
+  },
+  {
+    brand: "샬롯",
+    title: "샬롯 원데이 패밀리세일",
+    category: "패션",
+    start: "2026-08-09", end: "2026-08-09", confirmed: true,
+    place: "온라인 (샬롯 자사몰)", region: "온라인",
+    discount: "원데이 특가",
+    note: "8/9(일) 11:00~19:00 하루만. 회원 전용(로그인 필수), 사전예약은 8/3 오후 1시 오픈",
+    source: { label: "Instagram 제보", url: "https://www.instagram.com/p/DbkFDIbzBL9" }
+  },
+  {
+    brand: "모던하우스",
+    title: "모던하우스 패밀리세일",
+    category: "리빙",
+    start: "2026-07-27", end: "2026-08-31", confirmed: true,
+    place: "온라인 모던하우스몰 · 오프라인 매장", region: "온라인",
+    discount: "최대 30%",
+    note: "패밀리 회원 대상, 일부 행사 상품만 해당. 매장별 품목·재고 다름",
+    source: { label: "Instagram 제보", url: "https://www.instagram.com/p/DbYHpgUpLLw" }
+  },
+  {
+    brand: "디디해먹코리아",
+    title: "디디해먹 첫 패밀리세일",
+    category: "스포츠",
+    start: "2026-07-31", end: "2026-08-16", confirmed: true,
+    place: "온라인 (네이버 스마트스토어)", region: "온라인",
+    discount: "50%",
+    note: "타프·해먹·텐트·액세서리 전 상품. 스코틀랜드 부시크래프트 브랜드",
+    source: { label: "Instagram 제보", url: "https://www.instagram.com/p/DbcH0ZLv3A8" }
+  },
+  {
+    brand: "배리웨이",
+    title: "배리웨이 첫 패밀리세일",
+    category: "식품",
+    start: "2026-08-03", end: "2026-08-14", confirmed: true,
+    place: "온라인 (variway.kr)", region: "온라인",
+    discount: "쿠폰팩 할인",
+    note: "쿠폰팩으로 할인 적용 · 카톡 플친 추가 시 2천원 쿠폰 · 4만원 이상 무료배송",
+    link: "https://variway.kr",
+    source: { label: "Instagram 제보", url: "https://www.instagram.com/p/Dbj_sB8Efjh" }
+  },
+  {
+    brand: "레노마",
+    title: "레노마셔츠 패밀리세일",
+    category: "패션",
+    start: null, end: "2026-08-05", confirmed: true,
+    place: "판매처 미공개 (제보 게시물 댓글로 링크 안내)", region: "온라인",
+    discount: "셔츠 2만원선",
+    note: "8/5(수) 오후 4시 마감. 흔치 않은 남성 셔츠 패밀리세일",
+    source: { label: "Instagram 제보", url: "https://www.instagram.com/p/DbZtAuAxE-d" }
+  },
+  {
+    brand: "풀무원 · 올가",
+    title: "8월 할인코드 프로모션",
+    category: "식품",
+    start: "2026-08-01", end: "2026-08-31", confirmed: true,
+    place: "온라인 (자사몰)", region: "온라인",
+    discount: "3만원 이상 할인코드",
+    note: "제보 게시물에서 할인코드를 받아 마이페이지에 등록 후 결제 시 적용. 신선식품·간편식 대상",
+    source: { label: "Instagram 제보", url: "https://www.instagram.com/p/Dbf7wxupRj-" }
+  },
+  {
     brand: "노스페이스",
     title: "더현대Hi 아웃도어 위크",
     category: "스포츠",
@@ -425,7 +506,7 @@ const SALES = [
   {
     brand: "종근당건강",
     title: "종근당건강 네이버 브랜드데이",
-    category: "건강식품",
+    category: "식품",
     start: "2026-08-03", end: "2026-08-03", confirmed: true,
     place: "온라인 (네이버쇼핑 페스타)", region: "온라인",
     discount: "브랜드데이 특가",
@@ -540,9 +621,9 @@ const fmt = s => { const [y, m, d] = s.split("-").map(Number); return `${y}.${St
 
 function statusOf(s) {
   if (s.ended) return { key: "done", cls: "done", label: "종료", order: 3, sub: 9e9 };
-  if (!s.confirmed || !s.start) return { key: "plan", cls: "tbd", label: "일정 미확정", order: 2, sub: 9e9 };
-  const st = parse(s.start), en = s.end ? parse(s.end) : null;
-  if (st > today) return { key: "plan", cls: "plan", label: `D-${Math.round((st - today) / D)} 예정`, order: 1, sub: st - today };
+  if (!s.confirmed || (!s.start && !s.end)) return { key: "plan", cls: "tbd", label: "일정 미확정", order: 2, sub: 9e9 };
+  const st = s.start ? parse(s.start) : null, en = s.end ? parse(s.end) : null;
+  if (st && st > today) return { key: "plan", cls: "plan", label: `D-${Math.round((st - today) / D)} 예정`, order: 1, sub: st - today };
   if (en && en < today) return { key: "done", cls: "done", label: "종료", order: 3, sub: today - en };
   const left = en ? Math.round((en - today) / D) : null;
   if (left !== null && left <= 2) return { key: "live", cls: "soon", label: left === 0 ? "오늘 종료" : `종료 D-${left}`, order: 0, sub: left };
@@ -598,6 +679,7 @@ function render() {
   for (const { s, st } of items) {
     const period = s.start
       ? `${fmt(s.start)} ~ ${s.end ? fmt(s.end) : "미정"}`
+      : s.end ? `${fmt(s.end)}까지 (시작일 미상)`
       : (s.ended ? "종료된 행사" : "일정 공지 전");
     const card = document.createElement("article");
     card.className = "card" + (st.key === "done" ? " ended" : "") + (s.link ? " clickable" : "");
