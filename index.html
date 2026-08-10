@@ -156,7 +156,7 @@
   <header>
     <div class="eyebrow">Family Sale Board</div>
     <h1>패밀리세일 모아보기</h1>
-    <div class="updated">마지막 업데이트: <b>2026년 8월 7일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
+    <div class="updated">마지막 업데이트: <b>2026년 8월 10일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
   </header>
 
   <div class="filters">
@@ -202,6 +202,204 @@
    confirmed: false 면 "일정 미확정(예상)" 으로 표시
    link: 실제 판매 페이지 URL (있으면 카드 전체가 클릭됨)              */
 const SALES = [
+  {
+    brand: "LAZYZ",
+    title: "LAZYZ 패밀리세일",
+    category: "패션",
+    start: "2026-08-10", end: "2026-08-20", confirmed: true,
+    place: "온라인 (lazyz.cafe24.com)", region: "온라인",
+    discount: "최대 80%",
+    note: null,
+    link: "https://lazyz.cafe24.com/category/family-sale/74/",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1096" }
+  },
+  {
+    brand: "RSSC",
+    title: "RSSC 클리어런스 세일",
+    category: "패션",
+    start: "2026-08-10", end: "2026-08-17", confirmed: true,
+    place: "온라인 (rshemiste.cafe24.com)", region: "온라인",
+    discount: "최대 80%",
+    note: null,
+    link: "https://rshemiste.cafe24.com/product/list.html?cate_no=193",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1095" }
+  },
+  {
+    brand: "이스트팩",
+    title: "이스트팩 패밀리세일",
+    category: "패션잡화",
+    start: "2026-08-10", end: "2026-08-24", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "최대 89%",
+    note: "가방·백팩. 키플링과 같은 브랜드스토어에서 진행",
+    link: "https://brand.naver.com/kipling",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1094" }
+  },
+  {
+    brand: "도로시 주얼리",
+    title: "도로시 클리어런스 세일",
+    category: "패션잡화",
+    start: "2026-08-10", end: "2026-08-24", confirmed: true,
+    place: "온라인 (dorocy.co.kr)", region: "온라인",
+    discount: "클리어런스 특가",
+    note: "8/10 오전 10시 시작 ~ 8/24 오전 10시 종료",
+    link: "https://www.dorocy.co.kr/shop/shopbrand.html?type=Y&xcode=164&gf_ref=Y",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1093" }
+  },
+  {
+    brand: "메디필",
+    title: "메디필 8월 프렌즈&패밀리세일",
+    category: "뷰티",
+    start: "2026-08-10", end: "2026-08-17", confirmed: true,
+    place: "온라인 (medipeel.co.kr)", region: "온라인",
+    discount: "쿠폰 할인",
+    note: "쿠폰 코드 260810 입력 필요",
+    link: "https://medipeel.co.kr/2025familysales.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1092" }
+  },
+  {
+    brand: "오프앤온",
+    title: "런칭 1주년 메가딜 세일",
+    category: "가전",
+    start: "2026-08-10", end: "2026-08-14", confirmed: true,
+    place: "온라인 (offnon.kr)", region: "온라인",
+    discount: "최대 51%",
+    note: "스틸시리즈 마우스·인스타360 카메라·드리미 로봇청소기 등. 소진 시 종료",
+    link: "https://www.offnon.kr/product/list.html?cate_no=297",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1091" }
+  },
+  {
+    brand: "디키즈",
+    title: "디키즈 아카이브 세일",
+    category: "패션",
+    start: "2026-08-07", end: "2026-08-12", confirmed: true,
+    place: "온라인 (dickieskr.com)", region: "온라인",
+    discount: "최대 80%",
+    note: null,
+    link: "https://dickieskr.com/product/list.html?cate_no=235",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1089" }
+  },
+  {
+    brand: "리드리드",
+    title: "리드리드 시즌오프 세일",
+    category: "패션",
+    start: "2026-08-07", end: "2026-08-12", confirmed: true,
+    place: "온라인 (read-lead.kr)", region: "온라인",
+    discount: "최대 70%",
+    note: null,
+    link: "https://read-lead.kr/117",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1088" }
+  },
+  {
+    brand: "포에브",
+    title: "포에브 썸머 클리어런스 세일",
+    category: "패션",
+    start: "2026-08-07", end: "2026-08-10", confirmed: true,
+    place: "온라인 (poev.kr)", region: "온라인",
+    discount: "최대 90%",
+    note: "8/10(월) 낮 12시 종료",
+    link: "https://poev.kr/product/list.html?cate_no=173",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1087" }
+  },
+  {
+    brand: "인더로우",
+    title: "인더로우 썸머 아카이브 세일",
+    category: "패션",
+    start: "2026-08-07", end: "2026-08-14", confirmed: true,
+    place: "온라인 (intheraw.co.kr)", region: "온라인",
+    discount: "최대 70%",
+    note: "소진 시 종료",
+    link: "https://intheraw.co.kr/product/list.html?cate_no=62",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1086" }
+  },
+  {
+    brand: "문선",
+    title: "문선 썸머 클리어런스 세일",
+    category: "패션",
+    start: "2026-08-06", end: "2026-08-13", confirmed: true,
+    place: "온라인 (moonsun2019.cafe24.com)", region: "온라인",
+    discount: "최대 90%",
+    note: "S/S 제품 대상",
+    link: "https://moonsun2019.cafe24.com/product/list.html?cate_no=755",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1085" }
+  },
+  {
+    brand: "지누스",
+    title: "지누스 네이버 브랜드데이",
+    category: "리빙",
+    start: "2026-08-10", end: "2026-08-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/zinus/shoppingstory/detail?id=5002848810",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1090" }
+  },
+  {
+    brand: "한샘",
+    title: "한샘 네이버 브랜드데이",
+    category: "리빙",
+    start: "2026-08-10", end: "2026-08-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/hanssemmall/shoppingstory/detail?id=5002851819",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1090" }
+  },
+  {
+    brand: "젝시믹스",
+    title: "젝시믹스 네이버 브랜드데이",
+    category: "스포츠",
+    start: "2026-08-10", end: "2026-08-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/xexymix/shoppingstory/detail?id=5002855811",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1090" }
+  },
+  {
+    brand: "노스페이스",
+    title: "노스페이스 네이버 브랜드데이",
+    category: "스포츠",
+    start: "2026-08-10", end: "2026-08-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/thenorthface/shoppingstory/detail?id=5002858347",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1090" }
+  },
+  {
+    brand: "앱코",
+    title: "앱코 네이버 브랜드데이",
+    category: "가전",
+    start: "2026-08-10", end: "2026-08-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "게이밍 키보드·주변기기. 하루만 진행",
+    link: "https://m.brand.naver.com/abko/shoppingstory/detail?id=5002870695",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1090" }
+  },
+  {
+    brand: "루씨에어",
+    title: "루씨에어 네이버 브랜드데이",
+    category: "가전",
+    start: "2026-08-10", end: "2026-08-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/lucciair/shoppingstory/detail?id=5002878099",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1090" }
+  },
+  {
+    brand: "비온뒤",
+    title: "비온뒤 네이버 브랜드데이",
+    category: "뷰티",
+    start: "2026-08-10", end: "2026-08-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/aftertherain/shoppingstory/detail?id=5002882818",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1090" }
+  },
   {
     brand: "웰터 익스페리먼트",
     title: "WELTER EXPERIMENT DAY",
