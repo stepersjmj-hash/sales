@@ -156,7 +156,7 @@
   <header>
     <div class="eyebrow">Family Sale Board</div>
     <h1>패밀리세일 모아보기</h1>
-    <div class="updated">마지막 업데이트: <b>2026년 8월 10일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
+    <div class="updated">마지막 업데이트: <b>2026년 8월 15일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
   </header>
 
   <div class="filters">
@@ -202,6 +202,270 @@
    confirmed: false 면 "일정 미확정(예상)" 으로 표시
    link: 실제 판매 페이지 URL (있으면 카드 전체가 클릭됨)              */
 const SALES = [
+  {
+    brand: "배럴",
+    title: "배럴 패밀리세일",
+    category: "스포츠",
+    start: "2026-08-14", end: "2026-08-20", confirmed: true,
+    place: "온라인 (getbarrel.com)", region: "온라인",
+    discount: "최대 80%",
+    note: "입장코드 BARREL 입력 필요 (전용 로그인 페이지)",
+    link: "https://www.getbarrel.com/shop/b2bLogin?cid=194000000000000",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1129" }
+  },
+  {
+    brand: "앤드로스",
+    title: "앤드로스 시즌오프 세일",
+    category: "패션",
+    start: "2026-08-14", end: "2026-08-23", confirmed: true,
+    place: "온라인 (andros.co.kr)", region: "온라인",
+    discount: "최대 60%",
+    note: null,
+    link: "https://andros.co.kr/category/sale/171/",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1128" }
+  },
+  {
+    brand: "엔도어",
+    title: "시즌오프 & 리퍼브 세일",
+    category: "패션",
+    start: "2026-08-14", end: "2026-08-18", confirmed: true,
+    place: "온라인 (endoor.co.kr)", region: "온라인",
+    discount: "최대 90%",
+    note: "리퍼브·시즌오프 상품",
+    link: "https://www.endoor.co.kr/category/refurb/105/",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1127" }
+  },
+  {
+    brand: "뉴트리코어",
+    title: "뉴트리코어 임직원 패밀리세일",
+    category: "식품",
+    start: "2026-08-14", end: "2026-08-23", confirmed: true,
+    place: "온라인 (nutricore.co.kr)", region: "온라인",
+    discount: "최대 89%",
+    note: "건강기능식품",
+    link: "https://nutricore.co.kr/sopmal/goods/selectGoodsDtl?goodsInnb=2609343",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1126" }
+  },
+  {
+    brand: "페트레이",
+    title: "페트레이 패밀리세일",
+    category: "패션",
+    start: "2026-08-14", end: "2026-08-23", confirmed: true,
+    place: "온라인 (peuterey.co.kr)", region: "온라인",
+    discount: "최대 90%",
+    note: null,
+    link: "https://peuterey.co.kr/product/project.html?cate_no=341",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1125" }
+  },
+  {
+    brand: "아이헤이트먼데이",
+    title: "아이헤이트먼데이 리퍼브 세일",
+    category: "패션",
+    start: "2026-08-10", end: "2026-08-23", confirmed: true,
+    place: "온라인 (ihatemonday.co.kr)", region: "온라인",
+    discount: "최대 80%",
+    note: "B급 상품·촬영 샘플 등",
+    link: "https://ihatemonday.co.kr/product/list.html?cate_no=541",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1124" }
+  },
+  {
+    brand: "동구밭",
+    title: "동구밭 2026 임직원 패밀리세일",
+    category: "뷰티",
+    start: "2026-08-12", end: "2026-08-18", confirmed: true,
+    place: "온라인 (donggubat.co.kr)", region: "온라인",
+    discount: "최대 74%",
+    note: "3만원 이상 무료배송 · 사용기한 임박 제품 따로 표기",
+    link: "https://donggubat.co.kr/surl/P/661",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1121" }
+  },
+  {
+    brand: "스컬피그",
+    title: "스컬피그 라스트 쿨링 세일",
+    category: "스포츠",
+    start: "2026-08-13", end: "2026-08-24", confirmed: true,
+    place: "온라인 (skullpig.com)", region: "온라인",
+    discount: "최대 90%",
+    note: null,
+    link: "https://skullpig.com/product/list.html?cate_no=519",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1120" }
+  },
+  {
+    brand: "엘리자베스 스튜어트",
+    title: "슈즈 클리어런스 세일",
+    category: "패션잡화",
+    start: "2026-08-13", end: "2026-08-19", confirmed: true,
+    place: "온라인 (elizabethstuart.co.kr)", region: "온라인",
+    discount: "최대 94%",
+    note: "재고 소진 시 조기 종료",
+    link: "https://www.elizabethstuart.co.kr/product/list.html?cate_no=183",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1119" }
+  },
+  {
+    brand: "엔트런스",
+    title: "엔트런스 향수 세일",
+    category: "뷰티",
+    start: "2026-08-13", end: "2026-08-19", confirmed: true,
+    place: "온라인 (entrancestore.co.kr)", region: "온라인",
+    discount: "최대 55%",
+    note: "재고 소진 시 조기 종료",
+    link: "https://entrancestore.co.kr/product/list.html?cate_no=192",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1118" }
+  },
+  {
+    brand: "캐치볼",
+    title: "클리어런스 & 시즌오프 세일",
+    category: "패션잡화",
+    start: "2026-08-12", end: "2026-08-19", confirmed: true,
+    place: "온라인 (catchball.co.kr)", region: "온라인",
+    discount: "최대 60%",
+    note: "슈즈",
+    link: "https://catchball.co.kr/shop5/product/list.html?cate_no=273",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1117" }
+  },
+  {
+    brand: "노스페이스",
+    title: "노스페이스 썸머세일",
+    category: "스포츠",
+    start: "2026-08-13", end: "2026-08-19", confirmed: true,
+    place: "온라인 (thenorthfacekorea.co.kr)", region: "온라인",
+    discount: "최대 40%",
+    note: "재고 소진 시 조기 종료",
+    link: "https://www.thenorthfacekorea.co.kr/summervacation",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1116" }
+  },
+  {
+    brand: "엘르골프",
+    title: "엘르골프 온라인몰 세일",
+    category: "스포츠",
+    start: "2026-08-05", end: "2026-08-20", confirmed: true,
+    place: "온라인 (dlm1947.com)", region: "온라인",
+    discount: "최대 97%",
+    note: "할인코드 ELLE20260805 등록 시 적용 · 온라인몰 전용",
+    link: "https://dlm1947.com/goods/event_sale.php?sno=612",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1115" }
+  },
+  {
+    brand: "언더아머",
+    title: "SS 클리어런스",
+    category: "스포츠",
+    start: "2026-08-10", end: "2026-08-17", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "최대 68%",
+    note: null,
+    link: "https://brand.naver.com/underarmourkorea",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1111" }
+  },
+  {
+    brand: "푸마",
+    title: "푸마 공식 브랜드스토어 세일",
+    category: "스포츠",
+    start: "2026-08-12", end: "2026-08-19", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "최대 81%",
+    note: "재고 소진 시 종료",
+    link: "https://brand.naver.com/pumakorea",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1110" }
+  },
+  {
+    brand: "아크테릭스",
+    title: "아크테릭스 모자 세일",
+    category: "스포츠",
+    start: "2026-08-12", end: "2026-08-19", confirmed: true,
+    place: "온라인 (arcteryx.co.kr)", region: "온라인",
+    discount: "최대 50%",
+    note: "재고 소진 시 조기 종료",
+    link: "https://arcteryx.co.kr/products/category/412?sort=PRICEASC",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1109" }
+  },
+  {
+    brand: "테팔",
+    title: "테팔 70주년 고객감사제",
+    category: "리빙",
+    start: "2026-08-01", end: "2026-08-31", confirmed: true,
+    place: "온라인 (이마트 히마트)", region: "온라인",
+    discount: "70주년 특가",
+    note: null,
+    link: "https://www.e-himart.co.kr/app/displayPlan/listPlanDetail?spdpNo=13562",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1107" }
+  },
+  {
+    brand: "브릭맨션",
+    title: "8월 슈퍼특가 & 써머 클리어런스",
+    category: "패션",
+    start: "2026-08-11", end: "2026-08-31", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "최대 82%",
+    note: "클리어런스는 8/23까지, 슈퍼특가는 8/31까지",
+    link: "https://brand.naver.com/brickmansion",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1104" }
+  },
+  {
+    brand: "아이소이",
+    title: "여름 블랙 프라이데이 세일",
+    category: "뷰티",
+    start: "2026-08-11", end: "2026-08-17", confirmed: true,
+    place: "온라인 (isoi.co.kr)", region: "온라인",
+    discount: "최대 70%",
+    note: null,
+    link: "https://www.isoi.co.kr/event/202608/black_price_event",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1103" }
+  },
+  {
+    brand: "아티드",
+    title: "아티드 패밀리세일",
+    category: "패션",
+    start: "2026-08-11", end: "2026-08-30", confirmed: true,
+    place: "온라인 (artidofficial.com)", region: "온라인",
+    discount: "최대 75%",
+    note: "패밀리세일 코드 artid 입력",
+    link: "https://artidofficial.com/family/sale.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1102" }
+  },
+  {
+    brand: "레이스먼트",
+    title: "레이스먼트 프라이빗 세일",
+    category: "패션잡화",
+    start: "2026-08-11", end: "2026-08-17", confirmed: true,
+    place: "온라인 (racement.co.kr)", region: "온라인",
+    discount: "최대 50%",
+    note: "슈즈",
+    link: "https://racement.co.kr/exhibition/78032",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1101" }
+  },
+  {
+    brand: "베이-비",
+    title: "베이-비 임직원 패밀리세일",
+    category: "육아",
+    start: "2026-08-10", end: "2026-08-23", confirmed: true,
+    place: "온라인 (bay-b.com)", region: "온라인",
+    discount: "최대 91%",
+    note: "회원가입 후 할인가 확인 · 프로모션 코드 2026BAYB",
+    link: "https://bay-b.com/family_sale_landing.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1100" }
+  },
+  {
+    brand: "아메스",
+    title: "월드 와이드 클리어런스 세일",
+    category: "패션",
+    start: "2026-08-11", end: "2026-08-21", confirmed: true,
+    place: "온라인 (ames-worldwide.com)", region: "온라인",
+    discount: "최대 85%",
+    note: null,
+    link: "https://ames-worldwide.com/category/season-off/42",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1099" }
+  },
+  {
+    brand: "로어링라드",
+    title: "SS 시즌오프 세일",
+    category: "패션",
+    start: "2026-08-11", end: "2026-08-20", confirmed: true,
+    place: "온라인 (roaringrad.com)", region: "온라인",
+    discount: "최대 50%",
+    note: null,
+    link: "https://www.roaringrad.com/product/list.html?cate_no=46",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1098" }
+  },
   {
     brand: "LAZYZ",
     title: "LAZYZ 패밀리세일",
@@ -584,12 +848,12 @@ const SALES = [
     brand: "마리끌레르",
     title: "마리끌레르 온라인 패밀리세일",
     category: "패션",
-    start: "2026-08-03", end: "2026-08-09", confirmed: true,
+    start: "2026-08-13", end: "2026-09-01", confirmed: true,
     place: "온라인 (themarieclaire.com)", region: "온라인",
     discount: "최대 90%",
-    note: "재고 소진 시 조기 마감",
+    note: "2차 연장 진행 — 할인코드 MARIE2026 · 26FW 신상/26SS 베스트 포함",
     link: "https://themarieclaire.com/project/2026/family_sale.html?cate_no=1399",
-    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1064" }
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1123" }
   },
   {
     brand: "마뗑킴",
@@ -609,7 +873,7 @@ const SALES = [
     start: "2026-07-31", end: "2026-08-17", confirmed: true,
     place: "온라인 (michaelkors.co.kr)", region: "온라인",
     discount: "최대 90%",
-    note: "페이코 결제 시 추가 9% 할인 · 장바구니 할인 코드 제공",
+    note: "페이코 결제 시 추가 9% 할인 · 프로모션 코드 AUG12",
     link: "https://www.michaelkors.co.kr/shop/big_section.php?sort=11&cno1=1428",
     source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1067" }
   },
