@@ -1382,7 +1382,7 @@ function render() {
   const items = SALES
     .map(s => ({ s, st: statusOf(s) }))
     .filter(({ s, st }) =>
-      (state.status === "all" || st.key === state.status) &&
+      (state.status === "all" ? st.key !== "done" : st.key === state.status) &&
       (state.cat === "all" || s.category === state.cat) &&
       (state.region === "all" || s.region === state.region) &&
       (!q || (s.brand + s.title + s.place).toLowerCase().includes(q)))
