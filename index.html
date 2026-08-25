@@ -156,7 +156,7 @@
   <header>
     <div class="eyebrow">Family Sale Board</div>
     <h1>패밀리세일 모아보기</h1>
-    <div class="updated">마지막 업데이트: <b>2026년 8월 24일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
+    <div class="updated">마지막 업데이트: <b>2026년 8월 25일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
   </header>
 
   <div class="filters">
@@ -202,6 +202,116 @@
    confirmed: false 면 "일정 미확정(예상)" 으로 표시
    link: 실제 판매 페이지 URL (있으면 카드 전체가 클릭됨)              */
 const SALES = [
+  {
+    brand: "폴레드",
+    title: "폴레드 임직원 패밀리세일",
+    category: "육아",
+    start: "2026-08-24", end: "2026-08-26", confirmed: true,
+    place: "온라인 (poled.co.kr)", region: "온라인",
+    discount: "최대 92%",
+    note: "입장 코드 poled · 카시트·유아용품",
+    link: "https://poled.co.kr/event.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1161" }
+  },
+  {
+    brand: "세븐셀라",
+    title: "팬츠 아카이브 세일",
+    category: "패션",
+    start: "2026-08-24", end: "2026-08-31", confirmed: true,
+    place: "온라인 (sevenselah.com)", region: "온라인",
+    discount: "최대 94%",
+    note: "네이버페이 결제 시 적용 · 재고 소진 시 종료",
+    link: "https://sevenselah.com/index.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1159" }
+  },
+  {
+    brand: "위켄더스",
+    title: "WKNDRS 아카이브 세일",
+    category: "패션",
+    start: "2026-08-24", end: "2026-08-28", confirmed: true,
+    place: "온라인 (heights-store.com)", region: "온라인",
+    discount: "최대 80%",
+    note: null,
+    link: "https://heights-store.com/event/?epi=HLJKEW",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1158" }
+  },
+  {
+    brand: "일꼬르소",
+    title: "일꼬르소 패밀리데이 세일",
+    category: "패션잡화",
+    start: "2026-08-24", end: "2026-08-27", confirmed: true,
+    place: "온라인 (ilcorso-official.com)", region: "온라인",
+    discount: "최대 65%",
+    note: "남성 슈즈",
+    link: "https://ilcorso-official.com/goods/event_sale.php?sno=161",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1157" }
+  },
+  {
+    brand: "이스트서비스샵",
+    title: "폐업 파이널 세일",
+    category: "패션",
+    start: "2026-08-24", end: "2026-09-20", confirmed: true,
+    place: "온라인 (eastserviceshop.com)", region: "온라인",
+    discount: "최대 80%",
+    note: "폐업으로 인한 세일",
+    link: "https://eastserviceshop.com/product/list.html?cate_no=94",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1156" }
+  },
+  {
+    brand: "이마트몰",
+    title: "이마트몰 네이버 브랜드데이",
+    category: "식품",
+    start: "2026-08-25", end: "2026-08-25", confirmed: true,
+    place: "온라인 (네이버쇼핑)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.shopping.naver.com/outlink/event/20048370",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1160" }
+  },
+  {
+    brand: "리쥬란 코스메틱",
+    title: "리쥬란 네이버 브랜드데이",
+    category: "뷰티",
+    start: "2026-08-25", end: "2026-08-25", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/rejurancosmetics/shoppingstory/detail?id=5002844211",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1160" }
+  },
+  {
+    brand: "리한",
+    title: "리한 네이버 브랜드데이",
+    category: "육아",
+    start: "2026-08-25", end: "2026-08-25", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/lihan/shoppingstory/detail?id=5002912165",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1160" }
+  },
+  {
+    brand: "헤드앤숄더",
+    title: "헤드앤숄더 네이버 브랜드데이",
+    category: "뷰티",
+    start: "2026-08-25", end: "2026-08-25", confirmed: true,
+    place: "온라인 (네이버쇼핑 페스타)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "헤어케어 — 하루만 진행",
+    link: "https://shopping.naver.com/festa/onsale/6a504d87ed642b19b9c1e228",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1160" }
+  },
+  {
+    brand: "무인양품",
+    title: "무인양품 네이버 브랜드데이",
+    category: "리빙",
+    start: "2026-08-25", end: "2026-08-25", confirmed: true,
+    place: "온라인 (네이버쇼핑 페스타)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://shopping.naver.com/festa/onsale/brand/6a508a65ed642b19b9c22536",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1160" }
+  },
   {
     brand: "아떼",
     title: "아떼 뷰티 패밀리세일",
