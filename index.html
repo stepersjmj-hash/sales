@@ -156,7 +156,7 @@
   <header>
     <div class="eyebrow">Family Sale Board</div>
     <h1>패밀리세일 모아보기</h1>
-    <div class="updated">마지막 업데이트: <b>2026년 8월 25일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
+    <div class="updated">마지막 업데이트: <b>2026년 8월 31일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
   </header>
 
   <div class="filters">
@@ -202,6 +202,127 @@
    confirmed: false 면 "일정 미확정(예상)" 으로 표시
    link: 실제 판매 페이지 URL (있으면 카드 전체가 클릭됨)              */
 const SALES = [
+  {
+    brand: "엘무드",
+    title: "엘무드 시즌오프 세일",
+    category: "패션",
+    start: "2026-08-27", end: "2026-09-04", confirmed: true,
+    place: "온라인 (lmood.co.kr)", region: "온라인",
+    discount: "최대 80%",
+    note: null,
+    link: "https://lmood.co.kr/product/list.html?cate_no=559",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1170" }
+  },
+  {
+    brand: "우알롱",
+    title: "우알롱 프라이빗 세일",
+    category: "패션",
+    start: "2026-08-28", end: "2026-08-31", confirmed: true,
+    place: "온라인 (wooalong.com)", region: "온라인",
+    discount: "최대 95%",
+    note: "프로모션 코드 WOOPRI26 · 8/31(월) 17시 종료",
+    link: "https://wooalong.com/product/promotion/invitation.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1172" }
+  },
+  {
+    brand: "시선인터내셔날",
+    title: "시선 하반기 패밀리세일",
+    category: "패션",
+    start: "2026-08-25", end: "2026-08-31", confirmed: true,
+    place: "온라인 (family.sisun.com)", region: "온라인",
+    discount: "최대 90%",
+    note: "미샤·잇미샤·E.B.M 참여 · 입장코드 SISUN2026",
+    link: "https://family.sisun.com/",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1164" }
+  },
+  {
+    brand: "제로그램",
+    title: "제로그램 패밀리세일",
+    category: "스포츠",
+    start: "2026-08-24", end: "2026-08-31", confirmed: true,
+    place: "온라인 (zerogram.co.kr)", region: "온라인",
+    discount: "최대 86%",
+    note: "공식몰 전용(오프라인 제외) · 입장코드 필수 · 쿠폰/포인트 미적용",
+    link: "https://www.zerogram.co.kr/familysale",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1163" }
+  },
+  {
+    brand: "헤인즈",
+    title: "헤인즈 시즌오프 세일",
+    category: "패션",
+    start: "2026-08-26", end: "2026-08-31", confirmed: true,
+    place: "온라인 (hanes.kr)", region: "온라인",
+    discount: "최대 40%",
+    note: null,
+    link: "https://hanes.kr/product/list.html?cate_no=75",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1169" }
+  },
+  {
+    brand: "온앤온",
+    title: "온앤온 네이버 브랜드데이",
+    category: "패션",
+    start: "2026-08-31", end: "2026-08-31", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/onnon/shoppingstory/detail?id=5002855017",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1175" }
+  },
+  {
+    brand: "한국마즈",
+    title: "마즈 제과공식몰 네이버 브랜드데이",
+    category: "식품",
+    start: "2026-08-31", end: "2026-08-31", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "스니커즈·M&M 등 제과 — 하루만 진행",
+    link: "https://m.brand.naver.com/marschoco/shoppingstory/detail?id=5002855123",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1175" }
+  },
+  {
+    brand: "스노우피크 어패럴",
+    title: "스노우피크 어패럴 네이버 브랜드데이",
+    category: "스포츠",
+    start: "2026-08-31", end: "2026-08-31", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/snowpeakstore/shoppingstory/detail?id=5002857119",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1175" }
+  },
+  {
+    brand: "메이저골프",
+    title: "메이저골프 네이버 브랜드데이",
+    category: "스포츠",
+    start: "2026-08-31", end: "2026-08-31", confirmed: true,
+    place: "온라인 (네이버 스마트스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "골프용품 — 하루만 진행",
+    link: "https://m.smartstore.naver.com/majorgolf/shoppingstory/detail?id=5002910723",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1175" }
+  },
+  {
+    brand: "아토앤오투",
+    title: "아토앤오투 네이버 브랜드데이",
+    category: "뷰티",
+    start: "2026-08-31", end: "2026-08-31", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/atono2/shoppingstory/detail?id=5002934861",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1175" }
+  },
+  {
+    brand: "NG스토어키즈",
+    title: "NG스토어키즈 네이버 브랜드데이",
+    category: "육아",
+    start: "2026-08-31", end: "2026-08-31", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "키즈용품 — 하루만 진행",
+    link: "https://m.brand.naver.com/ngstorekids/shoppingstory/detail?id=5002954423",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1175" }
+  },
   {
     brand: "폴레드",
     title: "폴레드 임직원 패밀리세일",
