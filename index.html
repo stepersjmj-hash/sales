@@ -156,7 +156,7 @@
   <header>
     <div class="eyebrow">Family Sale Board</div>
     <h1>패밀리세일 모아보기</h1>
-    <div class="updated">마지막 업데이트: <b>2026년 8월 31일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
+    <div class="updated">마지막 업데이트: <b>2026년 9월 4일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
   </header>
 
   <div class="filters">
@@ -202,6 +202,149 @@
    confirmed: false 면 "일정 미확정(예상)" 으로 표시
    link: 실제 판매 페이지 URL (있으면 카드 전체가 클릭됨)              */
 const SALES = [
+  {
+    brand: "대명VIP",
+    title: "골프 페스티벌 & 오프뷰티 페스타",
+    category: "스포츠",
+    start: "2026-09-03", end: "2026-09-07", confirmed: true,
+    place: "온라인 (daemyungvip.com)", region: "온라인",
+    discount: "최대 92%",
+    note: "어뉴골프·랩골프·제이에스티나·캘빈클라인 등 72개 브랜드 + 뷰티관·추석선물세트. 코드 dmfs26, 11시·17시 타임세일",
+    link: "https://daemyungvip.com",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1194" }
+  },
+  {
+    brand: "아로마티카",
+    title: "아로마티카 패밀리세일",
+    category: "뷰티",
+    start: "2026-09-03", end: "2026-09-09", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "최대 82%",
+    note: "네이버 라운지 가입 필수 · 추석 기프트세트·헤어·바디·스킨케어",
+    link: "https://brand.naver.com/aromatica/products/11614083454",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1193" }
+  },
+  {
+    brand: "NOS7",
+    title: "NOS7 파이널 세일",
+    category: "패션",
+    start: "2026-09-02", end: "2026-12-31", confirmed: true,
+    place: "온라인 (nos7.com)", region: "온라인",
+    discount: "최대 50%",
+    note: "브랜드 운영 종료(12/31)에 따른 파이널 세일",
+    link: "https://nos7.com/product/list.html?cate_no=57",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1192" }
+  },
+  {
+    brand: "노드",
+    title: "노드 뉴시즌 리뉴얼 세일",
+    category: "패션",
+    start: "2026-09-03", end: "2026-09-18", confirmed: true,
+    place: "온라인 (noneofferdetail.com)", region: "온라인",
+    discount: "최대 90%",
+    note: "여성의류",
+    link: "https://noneofferdetail.com/category/Womens/42/",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1191" }
+  },
+  {
+    brand: "롯데GFR",
+    title: "롯데GFR 패밀리세일",
+    category: "패션",
+    start: "2026-09-02", end: "2026-09-08", confirmed: true,
+    place: "온라인 (lottegfr.net)", region: "온라인",
+    discount: "패밀리세일 특가",
+    note: "겐조·겐조키즈·나이스클랍·빔바이롤라·까웨 참여 · 참여코드 LOTTEMEMBER",
+    link: "https://www.lottegfr.net/lotte_intro.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1189" }
+  },
+  {
+    brand: "해피콜",
+    title: "추석 얼리버드 특가 세일",
+    category: "리빙",
+    start: "2026-09-02", end: "2026-09-13", confirmed: true,
+    place: "온라인 (hcmall.co.kr)", region: "온라인",
+    discount: "최대 83%",
+    note: "주방용품",
+    link: "https://hcmall.co.kr/product/list.html?cate_no=963",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1187" }
+  },
+  {
+    brand: "페일제이드",
+    title: "페일제이드 시즌오프 세일",
+    category: "패션",
+    start: "2026-09-02", end: "2026-09-07", confirmed: true,
+    place: "온라인 (palejade.shop)", region: "온라인",
+    discount: "최대 70%",
+    note: "9/7(월) 낮 12시 종료",
+    link: "https://palejade.shop/category/season-sale/221/",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1186" }
+  },
+  {
+    brand: "레떼드폴린",
+    title: "레떼드폴린 클리어런스 세일",
+    category: "패션",
+    start: "2026-09-02", end: "2026-09-10", confirmed: true,
+    place: "온라인 (letedepauline.com)", region: "온라인",
+    discount: "최대 60%",
+    note: null,
+    link: "https://letedepauline.com/product/list.html?cate_no=262",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1185" }
+  },
+  {
+    brand: "엠엠엠",
+    title: "엠엠엠 클리어런스 세일",
+    category: "패션",
+    start: "2026-09-02", end: "2026-09-04", confirmed: true,
+    place: "온라인 (mmmjeans.cafe24.com)", region: "온라인",
+    discount: "최대 80%",
+    note: null,
+    link: "https://mmmjeans.cafe24.com/product/list.html?cate_no=175",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1183" }
+  },
+  {
+    brand: "TFSS",
+    title: "TFSS 클리어런스 세일",
+    category: "패션",
+    start: "2026-09-02", end: "2026-09-13", confirmed: true,
+    place: "온라인 (247sunday.imweb.me)", region: "온라인",
+    discount: "최대 80%",
+    note: null,
+    link: "https://247sunday.imweb.me/40",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1182" }
+  },
+  {
+    brand: "오프그리드",
+    title: "FW 얼리 세일",
+    category: "패션",
+    start: "2026-09-02", end: "2026-09-06", confirmed: true,
+    place: "온라인 (offgridonline.co.kr)", region: "온라인",
+    discount: "최대 87%",
+    note: "가을/겨울 시즌 얼리 세일",
+    link: "https://offgridonline.co.kr/category/fw-early-sale/413/",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1181" }
+  },
+  {
+    brand: "타입서비스",
+    title: "시크릿 패밀리세일",
+    category: "패션",
+    start: "2026-09-01", end: "2026-09-07", confirmed: true,
+    place: "온라인 (typeserviceweb.com)", region: "온라인",
+    discount: "최대 90%",
+    note: "프로모션 코드 TSWLOVE",
+    link: "https://typeserviceweb.com/product/list.html?cate_no=105",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1179" }
+  },
+  {
+    brand: "리복",
+    title: "리복 시즌오프 세일",
+    category: "스포츠",
+    start: "2026-08-31", end: "2026-09-04", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "최대 77%",
+    note: "재고 소진 시 종료",
+    link: "https://brand.naver.com/reebok",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1177" }
+  },
   {
     brand: "엘무드",
     title: "엘무드 시즌오프 세일",
