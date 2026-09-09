@@ -156,7 +156,7 @@
   <header>
     <div class="eyebrow">Family Sale Board</div>
     <h1>패밀리세일 모아보기</h1>
-    <div class="updated">마지막 업데이트: <b>2026년 9월 4일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
+    <div class="updated">마지막 업데이트: <b>2026년 9월 9일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
   </header>
 
   <div class="filters">
@@ -202,6 +202,171 @@
    confirmed: false 면 "일정 미확정(예상)" 으로 표시
    link: 실제 판매 페이지 URL (있으면 카드 전체가 클릭됨)              */
 const SALES = [
+  {
+    brand: "라인프렌즈 스퀘어",
+    title: "라인프렌즈 패밀리세일",
+    category: "리빙",
+    start: "2026-09-08", end: "2026-09-10", confirmed: true,
+    place: "온라인 (linefriendssquare.com)", region: "온라인",
+    discount: "최대 90%",
+    note: "프로모션 코드 SQUARE2026 · 캐릭터 굿즈",
+    link: "https://linefriendssquare.com/blogs/lfs/2026-sep-family-sale",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1210" }
+  },
+  {
+    brand: "가민",
+    title: "가민 데이 2026",
+    category: "가전",
+    start: "2026-09-08", end: "2026-09-10", confirmed: true,
+    place: "온라인 (garmin.com)", region: "온라인",
+    discount: "가민 데이 특가",
+    note: "9/10(목) 오후 1시 종료 · 웨어러블·GPS 기기",
+    link: "https://www.garmin.com/ko-KR/c/promotions/2026/garmin-day/",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1208" }
+  },
+  {
+    brand: "쿡에버",
+    title: "쿡에버 추석 세일",
+    category: "리빙",
+    start: "2026-09-07", end: "2026-09-22", confirmed: true,
+    place: "온라인 (네이버)", region: "온라인",
+    discount: "최대 63%",
+    note: "주방용품 추석 특가",
+    link: "https://naver.me/5x05jp8V",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1205" }
+  },
+  {
+    brand: "드시모네",
+    title: "드시모네 페스타",
+    category: "식품",
+    start: "2026-09-01", end: "2026-09-20", confirmed: true,
+    place: "온라인 (desimone.co.kr)", region: "온라인",
+    discount: "최대 40%+10%",
+    note: "유산균 등 건강기능식품 · 3주간 진행",
+    link: "https://www.desimone.co.kr/event/event291",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1204" }
+  },
+  {
+    brand: "아이럭셔리",
+    title: "스타우브·르크루제·휘슬러 패밀리세일",
+    category: "리빙",
+    start: "2026-09-07", end: "2026-09-11", confirmed: true,
+    place: "온라인 (iluxury.co.kr)", region: "온라인",
+    discount: "최대 84%",
+    note: "수입 주방 브랜드 총판 프라이빗 세일 — 스타우브·르크루제·휘슬러·헹켈·큐티폴·코렐·라미 등",
+    link: "https://iluxury.co.kr",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1202" }
+  },
+  {
+    brand: "이현몰",
+    title: "아동복 패밀리세일",
+    category: "육아",
+    start: "2026-09-07", end: "2026-09-13", confirmed: true,
+    place: "온라인 (theihmall.com)", region: "온라인",
+    discount: "최대 90%",
+    note: null,
+    link: "https://www.theihmall.com/shop/promotion.php?pno=1010",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1201" }
+  },
+  {
+    brand: "툴레",
+    title: "툴레 가방 패밀리세일",
+    category: "패션잡화",
+    start: "2026-09-06", end: "2026-09-13", confirmed: true,
+    place: "온라인 (전용 페이지)", region: "온라인",
+    discount: "최대 91%",
+    note: "쿠폰코드 thule09",
+    link: "https://nnitlkor2024.cafe24.com/secret/familysale.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1200" }
+  },
+  {
+    brand: "티젠",
+    title: "굿바이 썸머 패밀리세일",
+    category: "식품",
+    start: "2026-09-04", end: "2026-09-13", confirmed: true,
+    place: "온라인 (teazenmall.com)", region: "온라인",
+    discount: "최대 88%",
+    note: "프로모션 코드 TEAZEN2026 · 콤부차·차류",
+    link: "https://teazenmall.com/product/promotion.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1198" }
+  },
+  {
+    brand: "사만사타바사 · 마이쉘",
+    title: "사만사타바사 & 마이쉘 패밀리세일",
+    category: "패션잡화",
+    start: "2026-09-04", end: "2026-09-13", confirmed: true,
+    place: "온라인 (stlfamilysale.co.kr)", region: "온라인",
+    discount: "최대 78%",
+    note: "할인코드 lotte09",
+    link: "https://stlfamilysale.co.kr/product/project.html?cate_no=270",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1196" }
+  },
+  {
+    brand: "LF몰 키즈",
+    title: "키즈 추석 선물 릴레이",
+    category: "육아",
+    start: "2026-09-07", end: "2026-09-14", confirmed: true,
+    place: "온라인 (lfmall.co.kr)", region: "온라인",
+    discount: "브랜드별 쿠폰",
+    note: "베베드피노·로토토베베·내셔널지오 키즈 등 15개 브랜드 · 코드 LFKIDS · 페이코 최대 11% 추가",
+    link: "https://m.lfmall.co.kr/app/event/114222",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1206" }
+  },
+  {
+    brand: "스파오",
+    title: "스파오 네이버 브랜드데이",
+    category: "패션",
+    start: "2026-09-09", end: "2026-09-09", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/spao/shoppingstory/detail?id=5002941116",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1209" }
+  },
+  {
+    brand: "멘소래담",
+    title: "멘소래담 네이버 브랜드데이",
+    category: "뷰티",
+    start: "2026-09-09", end: "2026-09-09", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/mentholatum/shoppingstory/detail?id=5002951849",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1209" }
+  },
+  {
+    brand: "쿠쿠전자",
+    title: "쿠쿠전자 네이버 브랜드데이",
+    category: "가전",
+    start: "2026-09-09", end: "2026-09-09", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/cuckoo/shoppingstory/detail?id=5002960962",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1209" }
+  },
+  {
+    brand: "더 클래스",
+    title: "더 클래스 네이버 브랜드데이",
+    category: "뷰티",
+    start: "2026-09-09", end: "2026-09-09", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/theclass/shoppingstory/detail?id=5002965322",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1209" }
+  },
+  {
+    brand: "비에날몰",
+    title: "비에날몰 네이버 브랜드데이",
+    category: "식품",
+    start: "2026-09-09", end: "2026-09-09", confirmed: true,
+    place: "온라인 (네이버쇼핑 페스타)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "건강용품 — 하루만 진행",
+    link: "https://shopping.naver.com/festa/onsale/healthy/6a7d1fe6233b4473b0335948",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1209" }
+  },
   {
     brand: "대명VIP",
     title: "골프 페스티벌 & 오프뷰티 페스타",
