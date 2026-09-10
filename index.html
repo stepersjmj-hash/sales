@@ -156,7 +156,7 @@
   <header>
     <div class="eyebrow">Family Sale Board</div>
     <h1>패밀리세일 모아보기</h1>
-    <div class="updated">마지막 업데이트: <b>2026년 9월 9일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
+    <div class="updated">마지막 업데이트: <b>2026년 9월 10일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
   </header>
 
   <div class="filters">
@@ -202,6 +202,116 @@
    confirmed: false 면 "일정 미확정(예상)" 으로 표시
    link: 실제 판매 페이지 URL (있으면 카드 전체가 클릭됨)              */
 const SALES = [
+  {
+    brand: "아토팜",
+    title: "아토팜 추석맞이 패밀리세일",
+    category: "육아",
+    start: "2026-09-10", end: "2026-09-20", confirmed: true,
+    place: "온라인 (neopharmshop.co.kr)", region: "온라인",
+    discount: "최대 80%",
+    note: "입장코드 ATOFAM99 · 유아 스킨케어",
+    link: "https://neopharmshop.co.kr/event/family_202609.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1214" }
+  },
+  {
+    brand: "가버 (Gabor)",
+    title: "가버 라스트 패밀리세일",
+    category: "패션잡화",
+    start: "2026-09-10", end: "2026-09-11", confirmed: true,
+    place: "온라인 (요넥스몰)", region: "온라인",
+    discount: "29,000원 균일가",
+    note: "독일 컴포트 슈즈 · 이틀만 진행",
+    link: "https://www.yonexmall.com/shop/goods/goods_list.php?category=028",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1213" }
+  },
+  {
+    brand: "1993스튜디오",
+    title: "93데이 세일",
+    category: "패션",
+    start: "2026-09-10", end: "2026-09-14", confirmed: true,
+    place: "온라인 (1993studio.com)", region: "온라인",
+    discount: "최대 93%",
+    note: null,
+    link: "https://1993studio.com/index.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1212" }
+  },
+  {
+    brand: "테일러메이드 어패럴",
+    title: "테일러메이드 어패럴 패밀리세일",
+    category: "스포츠",
+    start: "2026-09-10", end: "2026-09-15", confirmed: true,
+    place: "온라인 (taylormadeapparel.co.kr)", region: "온라인",
+    discount: "최대 60%",
+    note: "쿠폰코드 tm202609 · 골프웨어",
+    link: "https://taylormadeapparel.co.kr/product/list.html?cate_no=128",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1211" }
+  },
+  {
+    brand: "뉴발란스 키즈",
+    title: "뉴발란스 키즈 네이버 브랜드데이",
+    category: "육아",
+    start: "2026-09-10", end: "2026-09-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/newbalancekids/shoppingstory/detail?id=5002947694",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1215" }
+  },
+  {
+    brand: "이자녹스",
+    title: "이자녹스 네이버 브랜드데이",
+    category: "뷰티",
+    start: "2026-09-10", end: "2026-09-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/isaknox/shoppingstory/detail?id=5002951936",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1215" }
+  },
+  {
+    brand: "폰타나",
+    title: "폰타나 네이버 브랜드데이",
+    category: "패션잡화",
+    start: "2026-09-10", end: "2026-09-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/fontana/shoppingstory/detail?id=5002953035",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1215" }
+  },
+  {
+    brand: "블라누스",
+    title: "블라누스 네이버 브랜드데이",
+    category: "패션잡화",
+    start: "2026-09-10", end: "2026-09-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://m.brand.naver.com/blanus/shoppingstory/detail?id=5002955761",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1215" }
+  },
+  {
+    brand: "메가하우스",
+    title: "메가하우스 네이버 브랜드데이",
+    category: "리빙",
+    start: "2026-09-10", end: "2026-09-10", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "완구·홈데코 — 하루만 진행",
+    link: "https://m.brand.naver.com/megahouse/shoppingstory/detail?id=5002988154",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1215" }
+  },
+  {
+    brand: "마인드브릿지",
+    title: "마인드브릿지 네이버 브랜드데이",
+    category: "패션",
+    start: "2026-09-10", end: "2026-09-10", confirmed: true,
+    place: "온라인 (네이버쇼핑 페스타)", region: "온라인",
+    discount: "브랜드데이 특가",
+    note: "하루만 진행 — 할인율은 스토어에서 확인",
+    link: "https://shopping.naver.com/festa/onsale/brand/6a7d42c212ed830a52352bcb",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1215" }
+  },
   {
     brand: "라인프렌즈 스퀘어",
     title: "라인프렌즈 패밀리세일",
