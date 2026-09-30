@@ -156,7 +156,7 @@
   <header>
     <div class="eyebrow">Family Sale Board</div>
     <h1>패밀리세일 모아보기</h1>
-    <div class="updated">마지막 업데이트: <b>2026년 9월 10일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
+    <div class="updated">마지막 업데이트: <b>2026년 10월 1일</b> · 인터넷·SNS에 흩어진 패밀리세일 정보를 한곳에 정리한 페이지입니다.</div>
   </header>
 
   <div class="filters">
@@ -202,6 +202,93 @@
    confirmed: false 면 "일정 미확정(예상)" 으로 표시
    link: 실제 판매 페이지 URL (있으면 카드 전체가 클릭됨)              */
 const SALES = [
+  {
+    brand: "대동모피",
+    title: "26FW 시즌오픈 패밀리세일",
+    category: "패션",
+    start: "2026-10-02", end: "2026-10-18", confirmed: true,
+    place: "강남본점 (강남구 선릉로 537 미네르바빌딩 1층) · 구로본사전시장", region: "서울",
+    discount: "최대 70%+10%",
+    note: "11:00~18:30 · 회원은 추가 10% · 균일가 상품은 80% 이상 할인 · 초특가 상품은 매장 방문 구매만 가능",
+    source: { label: "Threads @familysale", url: "https://www.threads.com/@familysale" }
+  },
+  {
+    brand: "앤디앤뎁",
+    title: "앤디앤뎁 패밀리세일",
+    category: "패션",
+    start: "2026-09-23", end: "2026-10-02", confirmed: true,
+    place: "온라인 (andyndebb.com)", region: "온라인",
+    discount: "20% 쿠폰 + 중복할인",
+    note: "전 고객 20% 쿠폰 · 구매 금액별 중복 할인(최대 3만원)",
+    link: "https://www.andyndebb.com/",
+    source: { label: "Threads @familysale", url: "https://www.threads.com/@familysale" }
+  },
+  {
+    brand: "베리시",
+    title: "베리시 패밀리세일",
+    category: "패션",
+    start: "2026-09-30", end: "2026-10-06", confirmed: true,
+    place: "온라인 (verish.me)", region: "온라인",
+    discount: "최대 74%",
+    note: "히든 코드 Verish2026 입력 후 할인 적용",
+    link: "https://verish.me/project/26FamilySale.html",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1284" }
+  },
+  {
+    brand: "널디",
+    title: "널디 리퍼브 세일",
+    category: "패션",
+    start: "2026-09-30", end: "2026-10-07", confirmed: true,
+    place: "온라인 (ndy-official.com)", region: "온라인",
+    discount: "최대 86%",
+    note: "재고 소진 시 종료",
+    link: "https://ndy-official.com/product/list.html?cate_no=2700",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1283" }
+  },
+  {
+    brand: "노티카",
+    title: "노티카 아카이브 세일",
+    category: "패션",
+    start: "2026-09-29", end: "2026-10-07", confirmed: true,
+    place: "온라인 (worldwideworld.kr)", region: "온라인",
+    discount: "최대 75%",
+    note: "재고 소진 시 종료",
+    link: "https://worldwideworld.kr/product/list.html?cate_no=1130",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1281" }
+  },
+  {
+    brand: "로우로우",
+    title: "로우로우 아카이브 세일",
+    category: "패션잡화",
+    start: "2026-09-29", end: "2026-10-07", confirmed: true,
+    place: "온라인 (worldwideworld.kr)", region: "온라인",
+    discount: "최대 72%",
+    note: "가방·잡화 · 재고 소진 시 조기 종료",
+    link: "https://worldwideworld.kr/product/list.html?cate_no=1202",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1280" }
+  },
+  {
+    brand: "1993스튜디오",
+    title: "1993스튜디오 추석 세일",
+    category: "패션",
+    start: "2026-09-29", end: "2026-10-02", confirmed: true,
+    place: "온라인 (1993studio.com)", region: "온라인",
+    discount: "최대 92%",
+    note: null,
+    link: "https://onnt1993.cafe24.com/product/list.html?cate_no=463",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1278" }
+  },
+  {
+    brand: "아디다스",
+    title: "아디다스 레저 페스타",
+    category: "스포츠",
+    start: "2026-09-28", end: "2026-10-04", confirmed: true,
+    place: "온라인 (네이버 브랜드스토어)", region: "온라인",
+    discount: "최대 52%",
+    note: null,
+    link: "https://brand.naver.com/adidasfitness",
+    source: { label: "딜링크 패밀리세일", url: "https://dealink.co.kr/familysale/1276" }
+  },
   {
     brand: "아토팜",
     title: "아토팜 추석맞이 패밀리세일",
